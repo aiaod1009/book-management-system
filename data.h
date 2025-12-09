@@ -50,6 +50,6 @@ BookNode *search_by_keyword(BookNode *head, const char *keyword);
  *
  * @param head 链表头指针
  */
-void destroy_list(BookNode *head);
+void destroy_list(BookNode **head);
 
 #endif // LIBRARY_DATA_H

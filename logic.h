@@ -3,6 +3,7 @@
 
 #include "data.h"
 
+BookNode *add_book1(BookNode **head, const char *title, const char *author, const char *isbn, int stock);
 /**
  * @brief 按库存量升序排序（使用快速排序）
  *
