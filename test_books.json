@@ -1,13 +1,19 @@
-[{
-		"isbn":	"9780001",
-		"title":	"Book One",
-		"author":	"Author A",
-		"stock":	10,
-		"loaned":	1
-	}, {
-		"isbn":	"9780002",
-		"title":	"Book Two",
-		"author":	"Author B",
-		"stock":	3,
-		"loaned":	0
-	}]
+{
+	"metadata":	{
+		"version":	"1.0",
+		"created":	"2025-12-12 15:44:42"
+	},
+	"books":	[{
+			"isbn":	"9780001",
+			"title":	"Book One",
+			"author":	"Author A",
+			"stock":	10,
+			"loaned":	1
+		}, {
+			"isbn":	"9780002",
+			"title":	"Book Two",
+			"author":	"Author B",
+			"stock":	3,
+			"loaned":	0
+		}]
+}

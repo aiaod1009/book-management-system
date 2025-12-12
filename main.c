@@ -12,7 +12,7 @@
 void print_help() {
     printf("Library Management System\n");
     printf("Commands:\n");
-    printf("  add <isbn> <title> <author> <stock>  - Add a new book\n");
+    printf("  add <isbn> <title> <author> <stock>   - Add a new book\n");
     printf("  search <keyword>                      - Search by keyword\n");
     printf("  isbn <isbn>                           - Search by ISBN\n");
     printf("  loan <isbn> <quantity>                - Record a loan\n");
@@ -27,12 +27,12 @@ void print_help() {
 /**
  * @brief 主命令解析循环
  */
-void command_loop(BookNode **head) {
-    char command[100];
+void command_loop(BookNode **head) {// 接收图书链表的头指针（二级指针，用于修改链表）
+    char command[100]; // 存储用户输入的命令字符串
 
     while (1) {
-        printf("> ");
-        if (!fgets(command, sizeof(command), stdin)) {
+        printf("> "); // 显示输入提示符
+        if (!fgets(command, sizeof(command), stdin)) { // 读取用户输入
             break;
         }
 
@@ -42,9 +42,9 @@ void command_loop(BookNode **head) {
             command[len - 1] = '\0';
         }
 
-        // 解析命令
+        // 解析命令的第一个单词（比如"add"、"help"）
         char cmd[20];
-        sscanf_s(command, "%s", cmd, 20);
+        sscanf(command, "%s", cmd);
 
         if (strcmp(cmd, "exit") == 0) {
             break;
@@ -98,7 +98,7 @@ int main() {
     }
 
     // 清理资源
-    destroy_list(head);
+    destroy_list(&head);
 
     return 0;
 }

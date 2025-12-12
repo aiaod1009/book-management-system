@@ -5,7 +5,7 @@
 #include <string.h>
 
 // TODO: 实现图书添加（检查ISBN重复、动态分配内存）
-BookNode *add_book1(BookNode **head, const char *title, const char *author, const char *isbn, int stock) {
+BookNode *add_book1(BookNode **head, const char *title, const char *author, const char *isbn, int stock, int loaned) {
     /* --------------------
      *       [要求]
      * 1. 检查ISBN是否重复
@@ -31,7 +31,7 @@ BookNode *add_book1(BookNode **head, const char *title, const char *author, cons
     strncpy(new_node->author, author, sizeof(new_node->author)-1);
     new_node->author[sizeof(new_node->author)-1] = '\0';
     new_node->stock = stock;
-    new_node->loaned = 0;
+    new_node->loaned = loaned;
 
     // 3. 调用data层检查ISBN是否重复
     int ret = add_book(head, isbn, title, author, stock);
