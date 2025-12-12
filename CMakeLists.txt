@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.25.0)
 project(book_management VERSION 0.1.0 LANGUAGES C)
+set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(book_management 
     main.c 

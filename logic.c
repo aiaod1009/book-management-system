@@ -44,8 +44,6 @@ BookNode *add_book1(BookNode **head, const char *title, const char *author, cons
     // 4. 手动插入节点到链表
     new_node->next = *head;
     *head = new_node;
-
-    printf("成功添加图书：《%s》（ISBN：%s）\n", title, isbn); 
     return *head; // 这里返回*head（BookNode*，匹配函数返回值）
 }
 

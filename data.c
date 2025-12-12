@@ -1,4 +1,5 @@
 #include "data.h"
+#include "logic.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,8 +46,8 @@ BookNode *search_by_keyword(BookNode *head, const char *keyword) {
     while (current != NULL) {
         // 匹配书名或作者包含关键词
         if (strstr(current->title, keyword) != NULL || strstr(current->author, keyword) != NULL) {
-            // 将匹配的图书添加到结果链表（调用add_book函数）
-            add_book(&result_head, current->isbn, current->title, current->author, current->stock);
+            // 将匹配的图书添加到结果链表（调用logic里的add_book1函数）
+            add_book1(&result_head, current->isbn, current->title, current->author, current->stock, current->stock);
         }
         current = current->next;
     }
@@ -71,7 +72,7 @@ void destroy_list(BookNode **head) {
     }
 
     *head = NULL; // 置空头指针，避免野指针
-    printf("链表已销毁，内存已释放！\n");
+    // printf("链表已销毁，内存已释放！\n");
 }
 
 
